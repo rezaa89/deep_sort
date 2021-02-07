@@ -8,16 +8,16 @@ Table for the 0.95 quantile of the chi-square distribution with N degrees of
 freedom (contains values for N=1, ..., 9). Taken from MATLAB/Octave's chi2inv
 function and used as Mahalanobis gating threshold.
 """
-chi2inv95 = {
-    1: 3.8415,
-    2: 19.9915,
-    3: 13.8147,
-    4: 30.7,
-    5: 11.070,
-    6: 12.592,
-    7: 14.067,
-    8: 15.507,
-    9: 16.919}
+# chi2inv95 = {
+#     1: 3.8415,
+#     2: 19.9915,
+#     3: 13.8147,
+#     4: 30.7,
+#     5: 11.070,
+#     6: 12.592,
+#     7: 14.067,
+#     8: 15.507,
+#     9: 16.919}
 
 
 class KalmanFilter(object):
@@ -37,7 +37,7 @@ class KalmanFilter(object):
 
     """
 
-    def __init__(self):
+    def __init__(self, chi2inv95):
         ndim, dt = 4, 1.
 
         # Create Kalman filter model matrices.
