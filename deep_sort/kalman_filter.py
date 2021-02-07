@@ -39,7 +39,7 @@ class KalmanFilter(object):
 
     def __init__(self, chi2inv95):
         ndim, dt = 4, 1.
-
+        self.chi2inv95 = chi2inv95
         # Create Kalman filter model matrices.
         self._motion_mat = np.eye(2 * ndim, 2 * ndim)
         for i in range(ndim):
